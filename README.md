@@ -1,141 +1,48 @@
-# Logistic Regression Workflow using Orange Data Mining
+# Predictive Modeling with Orange Data Mining: Logistic Regression
 
-## Overview
-
-This project demonstrates a **Machine Learning Classification Workflow** created in **Orange Data Mining** using the **Logistic Regression** algorithm. The workflow includes data loading, feature selection, model training, and evaluation using the **Test & Score** widget.
-
-The pipeline is designed for beginners and intermediate learners to understand how supervised machine learning models are built visually without coding.
+This repository contains a visual machine learning workflow built using **Orange Data Mining**. The pipeline processes an incoming dataset, filters target/feature variables, applies a **Logistic Regression** classifier, and evaluates the model's predictive performance.
 
 ---
 
-## Workflow Architecture
+## 🛠️ Workflow Architecture
 
-The workflow contains the following components:
+The entire data pipelining and training process is constructed visually via individual specialized widgets linked sequentially:
 
-1. **File Widget**
+![Orange Workflow Canvas](path/to/your/Workflow_Canvas.png)
 
-   * Loads the dataset into Orange.
-
-2. **Select Columns Widget**
-
-   * Selects feature variables and target variables for training.
-
-3. **Logistic Regression Widget**
-
-   * Builds the classification model using Logistic Regression.
-
-4. **Test & Score Widget**
-
-   * Evaluates the model performance using validation techniques.
+### Widget Breakdown & Data Flow:
+1. **File:** Ingests the raw dataset into the runtime environment.
+2. **Select Columns:** Configures the data schema by assigning independent variables as **Features** and the prediction objective as the **Target** variable.
+3. **Logistic Regression:** A supervised classification algorithm used to calculate class probabilities using a logistic function.
+4. **Test and Score:** Executes cross-validation or a train/test split to benchmark the predictive capabilities of the model.
 
 ---
 
-## Machine Learning Pipeline
+## 📈 Model Performance & Evaluation Results
 
-```text
-File → Select Columns → Logistic Regression → Test & Score
-```
+Double-clicking the evaluation widgets inside Orange yields the following performance benchmarks for the Logistic Regression model:
 
----
+### 1. Test and Score Metrics
+The model evaluation calculates key statistical indicators including **AUC (Area Under ROC)**, **Classification Accuracy (CA)**, **F1-Score**, **Precision**, and **Recall**.
 
-## Features
+![Test and Score Results Panel](path/to/your/Test_and_Score_Results.png)
 
-* Visual Machine Learning Workflow
-* No-Code Model Building
-* Logistic Regression Classification
-* Dataset Feature Selection
-* Model Evaluation & Accuracy Testing
-* Beginner Friendly Interface
-* Drag-and-Drop Orange Widgets
+### 2. Confusion Matrix
+Provides a granular view of the True Positives, True Negatives, False Positives, and False Negatives to evaluate where the model is misclassifying instances.
 
----
+![Confusion Matrix Visualization](path/to/your/Confusion_Matrix.png)
 
-## Technologies Used
+### 3. ROC Analysis
+Plots the True Positive Rate against the False Positive Rate across various threshold settings to visually assess model discriminative ability.
 
-* Orange Data Mining
-* Logistic Regression Algorithm
-* Python-based Visual ML Framework
-* Classification Techniques
-* Data Preprocessing
+![ROC Curve Plot](path/to/your/ROC_Curve.png)
 
 ---
 
-## Project Objective
+## 🚀 How to Replicate This Workflow
 
-The main objective of this project is to:
-
-* Perform classification using Logistic Regression
-* Analyze model performance visually
-* Understand supervised machine learning workflow
-* Learn Orange Data Mining widgets and connections
-
----
-
-# Workflow Screenshot
-
-## Complete Workflow
-
-<img src="Screenshot 2026-06-11 093508.png" alt="Orange Logistic Regression Workflow" width="900"/>
-
----
-
-# Widgets Used
-
-| Widget Name         | Purpose                             |
-| ------------------- | ----------------------------------- |
-| File                | Import dataset                      |
-| Select Columns      | Select features and target variable |
-| Logistic Regression | Train classification model          |
-| Test & Score        | Evaluate model accuracy             |
-
----
-
-# Model Evaluation
-
-The **Test & Score** widget helps evaluate the model using metrics such as:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* AUC
-
----
-
-# Learning Outcomes
-
-After completing this project, you will understand:
-
-* Data loading and preprocessing
-* Feature selection techniques
-* Logistic Regression implementation
-* Model evaluation methods
-* Visual programming in Orange
-
----
-
-# Folder Structure
-
-```text
-├── data/
-├── screenshots/
-│   └── orange-logistic-regression-workflow.png
-├── README.md
-└── workflow.ows
-```
-
----
-
-# Future Enhancements
-
-* Add more classification algorithms
-* Compare multiple ML models
-* Include confusion matrix visualization
-* Add ROC Curve analysis
-* Perform hyperparameter tuning
-
----
-
-# Conclusion
-
-This project provides a simple and effective introduction to machine learning model building using Orange Data Mining. The Logistic Regression workflow demonstrates how classification problems can be solved visually with minimal coding effort.
+1. Download and install [Orange Data Mining](https://orangedatamining.com/).
+2. Clone this repository locally.
+3. Open Orange, navigate to `File -> Open`, and select the provided `.ows` file (`orange workflow.ows`).
+4. Double-click the **File** widget to point it toward your local data source.
+5. Open the **Test and Score** widget to view live model evaluation metrics.
